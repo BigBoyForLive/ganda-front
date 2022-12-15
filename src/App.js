@@ -16,7 +16,7 @@ export default function ParamsExample() {
     <Router>
       <div>
         <Switch>
-          <Route path="/:id" children={<Child />} />
+          <Route path="/user/activate:id" children={<Child />} />
         </Switch>
       </div>
     </Router>
