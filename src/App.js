@@ -16,7 +16,7 @@ export default function ParamsExample() {
     <Router>
       <div>
         <Switch>
-          <Route path="/user/activate:id" children={<Child />} />
+          <Route path="/user/activate/:id" children={<Child />} />
         </Switch>
       </div>
     </Router>
@@ -34,7 +34,7 @@ function Child() {
   const { id } = useParams();
   const getAllReservation = async () => {
     try {
-      let result = await axios.post("http://localhost:3000/user/activation", {
+      let result = await axios.post("http://3.101.83.39:3001/user/activation", {
         activation_token: id,
       });
       console.log(result.response.data.msg);
@@ -51,6 +51,7 @@ function Child() {
 
   return (
     <>
+    <div>Ganda Version 1.0</div>
       {err && (
         <div className="error">
           <div className="box">
