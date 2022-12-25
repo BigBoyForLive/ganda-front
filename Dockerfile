@@ -1,4 +1,4 @@
-FROM node:13.12.0-alpine
+FROM node:16-alpine
 
 WORKDIR /app
 
@@ -8,11 +8,14 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install --silent
+RUN npm install --force
 
-RUN npm install react-script
+RUN npm install react-script --force
 
 COPY . ./
 
-CMD ["npm", "start"]
+RUN npm install -g serve
 
+RUN npm run build
+
+CMD [ "npx", "serve", "build" ]
