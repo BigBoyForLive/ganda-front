@@ -14,8 +14,8 @@ RUN npm install react-script --force
 
 COPY . ./
 
-RUN npm install -g serve
+# RUN npm install -g serve
 
-RUN npm run build
+# RUN npm run build
 
-CMD [ "npx", "serve", "build" ]
+CMD [ "npm", "start" ]
